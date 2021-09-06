@@ -1,0 +1,40 @@
+/* nav * {
+  border-color: bisque;
+  border-style: dotted;
+  border-width: 2px;
+} */
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  height: 120px;
+  width:100% ;
+  background-color: #4056A1;
+  color: #FFFFFF;
+  z-index: 100;
+  position: absolute;
+}
+
+nav span.angle-double-down-arrow {
+  color: red;
+}
+
+nav span.write-a-tweet {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 600;
+}
+
+nav span.tweeter {
+  font-family:'Bungee', sans-serif;
+  margin: 0 1.5em;
+  font-size: larger;
+}
+
+nav div {
+  margin: 0 1.5em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

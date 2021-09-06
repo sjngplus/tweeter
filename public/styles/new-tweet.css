@@ -1,0 +1,38 @@
+main section h2{
+  text-align: center;
+  font-style: italic;
+}
+
+main section.new-tweet  {
+  display: flex;
+  flex-direction: column;
+} 
+
+main div.tweet-form-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: solid;
+  padding-bottom: 0.75em;
+  font-weight: bold;
+}
+
+main div.tweet-button-bottom {
+  font-family:'Bungee', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: .75em;  
+}
+
+main div.tweet-button-bottom button{ 
+  background-color: #4056A1;
+  color: #FFFFFF;
+  border-radius: 4px;
+}
+
+main #tweet-text {
+  margin-left: 0.5em;
+  height: 1.5em;
+  flex-grow: 2;
+}

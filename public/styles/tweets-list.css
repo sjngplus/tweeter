@@ -1,0 +1,25 @@
+section.tweets-list article {
+  border-style: solid;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  padding: 0.5em 0.75em;  
+}
+
+section.tweets-list article header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+section.tweets-list article footer {
+  display: flex;
+  align-items: center;
+}
+
+section.tweets-list article footer > * {
+  padding: 0 0.25em;
+}
+
+section.tweets-list article footer span {
+  flex-grow: 1;
+}

@@ -1,4 +1,4 @@
-header {
+body > header {
   background-color: #f58c80;
   background-image: url("../images/header-background.png");
   display: flex;

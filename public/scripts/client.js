@@ -108,11 +108,17 @@ $(document).ready(function() {
   
   $('.new-tweet form').submit(function(event) {
     event.preventDefault();
+    $('#empty-text').css({'display': 'none', 'visibility': 'hidden'});
+    $('#text-over-limit').css({'display': 'none', 'visibility': 'hidden'});
     const formTextArea = $(this).find('textarea');
     const textLength = $(formTextArea).val().length;
     const trimmedText = $(formTextArea).val().trim();    
-    if (!trimmedText) return alert("You are not humming!");
-    if (textLength > 140) return alert("Way too much humming!");
+    if (!trimmedText) {
+      return $('#empty-text').css({'display': 'block', 'visibility': 'visible'});
+    }    
+    if (textLength > 140) {
+      return $('#text-over-limit').css({'display': 'block', 'visibility': 'visible'});
+    }
     const urlEncodedText = formTextArea.serialize(); 
     $.post("/tweets", urlEncodedText, function() {
       loadTweets();

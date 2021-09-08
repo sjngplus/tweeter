@@ -1,0 +1,13 @@
+section.new-tweet .error-msg {
+  font-size: 20px;
+  color: #ea3535d9;
+  display: none;
+  visibility: hidden;
+  /* display: block;
+  visibility: visible; */
+}
+
+section.new-tweet .error-msg i {
+  color: #f55252d9;
+  padding: 0 0.35em;
+}

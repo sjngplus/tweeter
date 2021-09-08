@@ -40,6 +40,13 @@ const renderTweets = function(tweetsArr) {
   }
 };
 
+const escapeXSS = function (str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
+
+
 const createTweetElement = function(tweet) {  
   return (`
     <article>
@@ -49,7 +56,7 @@ const createTweetElement = function(tweet) {
         <span>${tweet.user.handle}</span>
       </header>
 
-      <p>${tweet.content.text}</p>
+      <p>${escapeXSS(tweet.content.text)}</p>
 
       <footer>
         <span>${timeago.format(tweet.created_at)}</span>

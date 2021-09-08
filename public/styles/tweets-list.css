@@ -11,6 +11,11 @@ section.tweets-list article header {
   align-items: center;
 }
 
+section.tweets-list article header span.profile-name {
+  flex-grow: 2;
+  margin-left: 0.5em;
+}
+
 section.tweets-list article footer {
   display: flex;
   align-items: center;

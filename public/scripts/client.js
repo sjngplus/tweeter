@@ -4,33 +4,115 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-$(document).ready(function() {
+// const { charCountFunc } = require('./composer-char-counter');
 
-  $("section.tweets-list article").hover(function() {
-    $(this).css({'box-shadow': '5px 5px 10px'})
-  }, function() {
-    $(this).css({'box-shadow': 'none'})
-  })
+
+// const tweetsDataBase = [
+//   {
+//     "user": {
+//       "name": "Newton",
+//       "avatars": "https://i.imgur.com/73hZDYK.png",
+//       "handle": "@SirIsaac"
+//     },
+//     "content": {
+//       "text": "If I have seen further it is by standing on the shoulders of giants"
+//     },
+//     "created_at": 1630901014194
+//   },
+//   {
+//     "user": {
+//       "name": "Descartes",
+//       "avatars": "https://i.imgur.com/nlhLi3I.png",
+//       "handle": "@rd"
+//     },
+//     "content": {
+//       "text": "Je pense , donc je suis"
+//     },
+//     "created_at": 1630987414194
+//   }
+// ]
+
+const renderTweets = function(tweetsArr) {
+  $('.tweets-list').empty();
+  for (const tweet of tweetsArr) {
+    const $tweet = createTweetElement(tweet)    
+    $('.tweets-list').prepend($tweet);
+  }
+};
+
+const createTweetElement = function(tweet) {  
+  return (`
+    <article>
+      <header>
+        <span><img src="${tweet.user.avatars}"></span>
+        <span class="profile-name">${tweet.user.name}</span>
+        <span>${tweet.user.handle}</span>
+      </header>
+
+      <p>${tweet.content.text}</p>
+
+      <footer>
+        <span>${timeago.format(tweet.created_at)}</span>
+        <i class="fas fa-flag"></i>
+        <i class="fas fa-retweet"></i>
+        <i class="fas fa-heart"></i>
+      </footer>
+    </article>
+  `);  
+}
+
+const loadTweets = function() {
+  $.get( "/tweets/", function(data) {
+    renderTweets(data);      
+  });
+};
+
+
+$(document).ready(function() {
   
-  // $("section.tweets-list article footer i").mouseenter(function() {
-  //   const currentIcon = $(this);
-  //   currentIcon.css({'color': 'darkgoldenrod'});
-  // })
-  // .mouseleave(function(){
-  //   const currentIcon = $(this);
-  //   currentIcon.css({'color': 'inherit'});  
-  // })
   
-  $("section.tweets-list article footer i").hover(function() {
-    const currentIcon = $(this);
-    currentIcon.css({'color': 'darkgoldenrod'});
-  }, function() {
-    const currentIcon = $(this);
-    currentIcon.css({'color': 'inherit'});  
-  })
+  // renderTweets(tweetsDataBase);
   
+  loadTweets();
   
+  $("section.tweets-list").on("mouseover", function(event) {
+    const target = $(event.target).closest("article");
+    target.css({'box-shadow': '5px 5px 10px'})
+  });
+
+  $("section.tweets-list").on("mouseout", function(event) {
+    const target = $(event.target).closest("article");
+    target.css({'box-shadow': 'none'})
+  });
   
+  $("section.tweets-list").on("mouseover", function(event) {
+    const target = event.target.localName;
+    if (target === "i") {
+      $(event.target).css({'color': 'darkgoldenrod'});
+    }
+  }),
+
+  $("section.tweets-list").on("mouseout", function(event) { 
+    const target = event.target.localName;
+    if (target === "i") {
+      $(event.target).css({'color': 'inherit'});  
+    }
+  });  
+  
+  $('.new-tweet form').submit(function(event) {
+    event.preventDefault();
+    const formTextArea = $(this).find('textarea');
+    const textLength = $(formTextArea).val().length;
+    const trimmedText = $(formTextArea).val().trim();    
+    if (!trimmedText) return alert("You are not humming!");
+    if (textLength > 140) return alert("Way too much humming!");
+    const urlEncodedText = formTextArea.serialize(); 
+    $.post("/tweets", urlEncodedText, function() {
+      loadTweets();
+      $(formTextArea).val("");
+      $(".counter").text("140");
+    });    
+  });
 
 });
 

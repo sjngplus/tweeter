@@ -3,11 +3,13 @@ section.new-tweet .error-msg {
   color: #ea3535d9;
   display: none;
   visibility: hidden;
-  /* display: block;
-  visibility: visible; */
+  overflow: hidden;
+  transition: all 0.5s ease-out;
+  height: 0;
 }
 
 section.new-tweet .error-msg i {
   color: #f55252d9;
   padding: 0 0.35em;
 }
+

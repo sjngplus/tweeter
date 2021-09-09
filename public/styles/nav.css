@@ -8,10 +8,11 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  
-  height: 120px;
+  border-radius: 3px;
+  height: 100px;
   width:100% ;
-  background-color: #4056A1;
+  background-color: #f58c80;
+  background-image: url("../images/header-background.png");
   color: #FFFFFF;
   z-index: 2;
   position: fixed;

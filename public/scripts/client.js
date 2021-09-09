@@ -114,12 +114,12 @@ $(document).ready(function() {
     const textLength = $(formTextArea).val().length;
     const trimmedText = $(formTextArea).val().trim();    
     if (!trimmedText) {
-      return $('#empty-text').css({'display': 'block', 'visibility': 'visible'});
+      return $('#empty-text').css({'display': 'block','visibility': 'visible', 'height': '1.5em'});
     }    
     if (textLength > 140) {
-      return $('#text-over-limit').css({'display': 'block', 'visibility': 'visible'});
+      return $('#text-over-limit').css({'display': 'block', 'visibility': 'visible', 'height': '1.5em'});
     }
-    const urlEncodedText = formTextArea.serialize(); 
+    const urlEncodedText = formTextArea.serialize();
     $.post("/tweets", urlEncodedText, function() {
       loadTweets();
       $(formTextArea).val("");
@@ -130,3 +130,11 @@ $(document).ready(function() {
 });
 
 
+
+// if ($inputField === "") {
+//   return $(".error-msgs").text("Post cannot be empty!").slideDown().show();
+// }
+
+// if ($counter.val() < 0) {
+//   return $(".error-msgs").text("Post cannot exceed over 140 character limit!").slideDown().show();
+// }

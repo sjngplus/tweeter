@@ -1,10 +1,11 @@
 body > header {
+  border-radius: 3px;
   background-color: #f58c80;
   background-image: url("../images/header-background.png");
   display: flex;
   flex-direction: column;
   align-items:center;
   justify-content: flex-end;
-  height: 525px;
+  height: 500px;
   width: 100%;
 }

@@ -20,7 +20,7 @@ main #tweet-text {
   border: none;
   outline: none;
   height: 1.5em;  
-  margin-top: 0.5em;
+  margin-top: 2em;
 }
 
 ::placeholder {
@@ -35,8 +35,8 @@ main div.tweet-button-bottom {
   padding-top: .75em;  
 }
 
-main div.tweet-button-bottom button{ 
-  background-color: #4056A1;
+main div.tweet-button-bottom button {
+  background-color: #405fa1;
   color: #FFFFFF;
   border-radius: 4px;
 }

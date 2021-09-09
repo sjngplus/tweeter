@@ -23,12 +23,41 @@ body {
 /*
 * Additional CSS can be defined below or in other CSS files, as per instructions
 */
+body > * {
+  border-color: blueviolet;
+  border-style: double;
+  border-width: 5px;
+}
 
 body {
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif; 
 }
+
 
 main.container {  
   width: 90%;
   margin: 0 auto;
+}
+
+@media screen and (min-width: 1024px) {
+  body {    
+    display: flex;
+  }
+
+  body nav {
+    background-color: #405fa1;
+    background-image: none;
+  }
+
+  body > header {
+    margin: 0 25px;
+    margin-top: 180px;
+    align-self: flex-start;
+    max-width: 390px;
+    max-height: 320px;
+  }
+
+  body main.container {
+    margin: 180px 50px;
+  }
 }

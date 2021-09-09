@@ -14,7 +14,6 @@ nav {
   background-color: #f58c80;
   background-image: url("../images/header-background.png");
   color: #FFFFFF;
-  z-index: 2;
   position: fixed;
 }
 

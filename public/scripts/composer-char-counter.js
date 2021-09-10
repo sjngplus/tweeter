@@ -1,5 +1,14 @@
+$(document).ready(function() {
+  
+  charCountFunc();
+
+});
+
+
 const charCountFunc = function() {
   $("#tweet-text").on("input", function() {
+    $('#empty-text').slideUp();
+    $('#text-over-limit').slideUp();
     let charCount = 140 - $(this).val().length;
     const counterHtmlTag = $(this).closest("form", "section#new-tweet").find("output");
     counterHtmlTag.text(charCount);
@@ -10,9 +19,3 @@ const charCountFunc = function() {
     }
   });
 }
-
-$(document).ready(function() {
-  
-  charCountFunc();
-
-});

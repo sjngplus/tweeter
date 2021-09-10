@@ -16,10 +16,11 @@ main div.tweet-form-top {
 }
 
 main #tweet-text {
+  padding-top: 2.5em;
   background: transparent;
   border: none;
   outline: none;
-  height: 1.5em;  
+  height: 4em;  
   margin-top: 2em;
 }
 

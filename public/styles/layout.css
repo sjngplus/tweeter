@@ -23,11 +23,6 @@ body {
 /*
 * Additional CSS can be defined below or in other CSS files, as per instructions
 */
-body > * {
-  border-color: blueviolet;
-  border-style: double;
-  border-width: 5px;
-}
 
 body {
   font-family: 'Source Sans Pro', sans-serif; 
@@ -60,4 +55,11 @@ main.container {
   body main.container {
     margin: 180px 50px;
   }
+
+  main #tweet-text {
+    padding-top: 0.5em;
+    height: 2em;  
+    margin-top: 0em;
+  }
+  
 }

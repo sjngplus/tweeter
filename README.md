@@ -6,13 +6,13 @@ This app uses jQuery and AJAX for the front-end plus, Node and Express as the ba
 
 ## Final Product Pages:
 
-!["Main page for large screen format"]()
+!["Main page for large screen format"](https://raw.githubusercontent.com/sjngplus/tweeter/master/docs/Large%20screen.png)
 
-!["Main page for small screen format"]()
+!["Main page for small screen format"](https://raw.githubusercontent.com/sjngplus/tweeter/master/docs/small%20screen.png)
 
-!["Error message"]()
+!["Error message"](https://raw.githubusercontent.com/sjngplus/tweeter/master/docs/Error%201.png)
 
-!["Typing new message"]()
+!["Typing new message"](https://raw.githubusercontent.com/sjngplus/tweeter/master/docs/new%20message.png)
 
 ## Getting Started
 

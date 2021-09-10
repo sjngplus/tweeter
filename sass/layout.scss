@@ -6,7 +6,6 @@
 html {
   box-sizing: border-box;
 }
-
 *, *:before, *:after {
   box-sizing: inherit;
 }
@@ -14,6 +13,7 @@ html {
 /*
  * Global layout stuff
  */
+
 body {
   color: #545149;
   background-color: #f4f1ec;
@@ -23,17 +23,19 @@ body {
 /*
 * Additional CSS can be defined below or in other CSS files, as per instructions
 */
+
 body {
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: 'Source Sans Pro', sans-serif; 
 }
 
-main.container {
+
+main.container {  
   width: 90%;
   margin: 0 auto;
 }
 
 @media screen and (min-width: 1024px) {
-  body {
+  body {    
     display: flex;
   }
 
@@ -56,7 +58,8 @@ main.container {
 
   main #tweet-text {
     padding-top: 0.5em;
-    height: 2em;
+    height: 2em;  
     margin-top: 0em;
   }
+  
 }

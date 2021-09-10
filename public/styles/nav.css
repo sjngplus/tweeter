@@ -1,8 +1,3 @@
-/* nav {
-  border-color: bisque;
-  border-style: dotted;
-  border-width: 2px;
-} */
 nav {
   display: flex;
   justify-content: space-between;

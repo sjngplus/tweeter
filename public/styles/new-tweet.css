@@ -41,3 +41,14 @@ main div.tweet-button-bottom button {
   color: #FFFFFF;
   border-radius: 4px;
 }
+
+section.new-tweet .error-msg {
+  font-size: 20px;
+  color: #ea3535d9;
+  display: none;
+}
+
+section.new-tweet .error-msg i {
+  color: #f55252d9;
+  padding: 0 0.35em;
+}
